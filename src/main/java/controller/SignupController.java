@@ -1,5 +1,6 @@
 package controller;
 
+import Database.DatabaseHandler;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import javafx.fxml.FXML;
@@ -43,6 +44,13 @@ public class SignupController {
 
     @FXML
     void initialize() {
+        DatabaseHandler databaseHandler = new DatabaseHandler();
 
+        signUpButton.setOnAction(actionEvent -> {
+
+            databaseHandler.signUpUser(signUpFirstName.getText(), signUpLastName.getText(),
+                    SignUpUsername.getText(), signUpPassword.getText(),
+                    signUpLocation.getText(), "Female");
+        });
     }
 }
