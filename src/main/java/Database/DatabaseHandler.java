@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 public class DatabaseHandler extends Configs {
     Connection dbConnection;
+    static private PreparedStatement preparedStatement;
 
     public Connection getDbConnection() throws ClassNotFoundException, SQLException {
         String connectionString = "jdbc:mysql://" + dbHost + ":"
@@ -23,7 +24,7 @@ public class DatabaseHandler extends Configs {
     //Write
 
     public void signUpUser (String firstName, String lastName, String userName,
-                            String password, String location, String gender) {
+                            String password, String location, String gender) throws SQLException {
         String insert = "INSERT INTO " + Const.USERS_TABLE + "(" + Const.USERS_FIRSTNAME
                 + "," + Const.USERS_LASTNAME + "," + Const.USERS_USERNAME + ","
                 + Const.USERS_PASSWORD + "," + Const.USERS_LOCATION + ","
@@ -31,7 +32,7 @@ public class DatabaseHandler extends Configs {
 
         {
             try {
-                PreparedStatement preparedStatement = getDbConnection().prepareStatement(insert);
+                preparedStatement = getDbConnection().prepareStatement(insert);
 
                 preparedStatement.setString(1, firstName);
                 preparedStatement.setString(2, lastName);
@@ -40,9 +41,7 @@ public class DatabaseHandler extends Configs {
                 preparedStatement.setString(5, location);
                 preparedStatement.setString(6, gender);
 
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }

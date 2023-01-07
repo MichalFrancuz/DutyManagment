@@ -8,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class SignupController {
@@ -47,10 +48,13 @@ public class SignupController {
         DatabaseHandler databaseHandler = new DatabaseHandler();
 
         signUpButton.setOnAction(actionEvent -> {
-
-            databaseHandler.signUpUser(signUpFirstName.getText(), signUpLastName.getText(),
-                    SignUpUsername.getText(), signUpPassword.getText(),
-                    signUpLocation.getText(), "Female");
+            try {
+                databaseHandler.signUpUser(signUpFirstName.getText(), signUpLastName.getText(),
+                        SignUpUsername.getText(), signUpPassword.getText(),
+                        signUpLocation.getText(), "Female");
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         });
     }
 }
