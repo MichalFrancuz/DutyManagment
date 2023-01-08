@@ -7,7 +7,6 @@ import java.sql.SQLException;
 
 public class DatabaseHandler extends Configs {
     Connection dbConnection;
-    static private PreparedStatement preparedStatement;
 
     public Connection getDbConnection() throws ClassNotFoundException, SQLException {
         String connectionString = "jdbc:mysql://" + dbHost + ":"
@@ -16,23 +15,23 @@ public class DatabaseHandler extends Configs {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        dbConnection = DriverManager.getConnection(connectionString,dbUser, dbPass);
+        dbConnection = DriverManager.getConnection(connectionString, dbUser, dbPass);
 
         return dbConnection;
     }
 
     //Write
 
-    public void signUpUser (String firstName, String lastName, String userName,
-                            String password, String location, String gender) throws SQLException {
-        String insert = "INSERT INTO " + Const.USERS_TABLE + "(" + Const.USERS_FIRSTNAME
-                + "," + Const.USERS_LASTNAME + "," + Const.USERS_USERNAME + ","
-                + Const.USERS_PASSWORD + "," + Const.USERS_LOCATION + ","
-                + Const.USERS_GENDER + ")" + "VALUES(?,?,?,?,?,?)";
+    public void signUpUser(String firstName, String lastName, String userName,
+                           String password, String location, String gender) {
+        String insert = "INSERT INTO "+Const.USERS_TABLE +"("+Const.USERS_FIRSTNAME
+                +","+Const.USERS_LASTNAME+","+Const.USERS_USERNAME+","
+                +Const.USERS_PASSWORD+","+Const.USERS_LOCATION+","
+                +Const.USERS_GENDER+")" + "VALUES(?,?,?,?,?,?)";
 
         {
             try {
-                preparedStatement = getDbConnection().prepareStatement(insert);
+                PreparedStatement preparedStatement = getDbConnection().prepareStatement(insert);
 
                 preparedStatement.setString(1, firstName);
                 preparedStatement.setString(2, lastName);
@@ -40,6 +39,8 @@ public class DatabaseHandler extends Configs {
                 preparedStatement.setString(4, password);
                 preparedStatement.setString(5, location);
                 preparedStatement.setString(6, gender);
+
+                preparedStatement.executeUpdate();
 
             } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
