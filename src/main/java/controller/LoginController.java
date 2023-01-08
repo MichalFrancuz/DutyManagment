@@ -1,16 +1,22 @@
 package controller;
 
+import Database.DatabaseHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
 import com.jfoenix.controls.JFXButton;
 import javafx.stage.Stage;
+import model.User;
 
 public class LoginController {
     @FXML
@@ -20,7 +26,7 @@ public class LoginController {
     private URL location;
 
     @FXML
-    private TextField loginPassword;
+    private PasswordField loginPassword;
 
     @FXML
     private JFXButton loginSigninButton;
@@ -31,11 +37,40 @@ public class LoginController {
     @FXML
     private TextField loginUsername;
 
+    private DatabaseHandler databaseHandler;
+
     @FXML
     void initialize() {
 
-        String loginText = loginUsername.getText().trim();
-        String loginPwd = loginPassword.getText().trim();
+        databaseHandler = new DatabaseHandler();
+
+        loginSigninButton.setOnAction(actionEvent -> {
+
+            String loginText = loginUsername.getText().trim();
+            String loginPwd = loginPassword.getText().trim();
+
+            User user = new User();
+            user.setUserName(loginText);
+            user.setPassword(loginPwd);
+
+            ResultSet userRow = databaseHandler.getUser(user);
+
+            int counter = 0;
+
+            try {
+                while (userRow.next()) {
+                    counter++;
+                    String name = userRow.getString(2);
+                    System.out.println("Hi " + name + "!");
+                }
+                if (counter == 1) {
+                    System.out.println("Login Successful!");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        });
 
         loginSignupButton.setOnAction(actionEvent -> {
             //Take users to signup screen
@@ -56,18 +91,6 @@ public class LoginController {
 
         });
 
-        loginSigninButton.setOnAction(actionEvent -> {
-            if (!loginText.equals("") || !loginPwd.equals("")) {
-                loginUser(loginText, loginPwd);
-            }else {
-                System.out.println("Error login in user");
-            }
-
-        });
     }
 
-    private void loginUser(String userName, String password) {
-        //Check in the database if the user exists, if true
-        //we take them to AddItem Screen
-    }
 }
