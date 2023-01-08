@@ -1,6 +1,7 @@
 package controller;
 
 import Database.DatabaseHandler;
+import animations.Shaker;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -65,6 +66,12 @@ public class LoginController {
                 }
                 if (counter == 1) {
                     System.out.println("Login Successful!");
+                } else {
+                    Shaker loginUsernameShaker = new Shaker(loginUsername);
+                    Shaker loginPasswordShaker = new Shaker(loginPassword);
+                    loginUsernameShaker.shake();
+                    loginPasswordShaker.shake();
+
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
