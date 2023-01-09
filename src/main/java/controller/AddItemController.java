@@ -35,7 +35,7 @@ public class AddItemController {
             FadeTransition labelTransition = new FadeTransition(Duration.millis(2500), notTaskLabel);
 
             System.out.println("Added button Clicked");
-            addButton.relocate(0, 0);
+            addButton.relocate(0, -80);
             notTaskLabel.relocate(0, 55);
 
             addButton.setOpacity(0);
