@@ -3,6 +3,7 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,10 +15,12 @@ public class AddItemFormController {
     public TextField descriptionField;
     @FXML
     public JFXButton saveTaskButton;
+    public AnchorPane rootPane;
     @FXML
     private ResourceBundle resources;
     @FXML
     private URL location;
+
     @FXML
     void initialize() {
 
