@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import model.User;
 
 public class LoginController {
+    private int userId;
     @FXML
     private ResourceBundle resources;
 
@@ -62,6 +63,8 @@ public class LoginController {
                 while (userRow.next()) {
                     counter++;
                     String name = userRow.getString(2);
+                    userId = userRow.getInt(1);
+
                     System.out.println("Hi " + name + "!");
                 }
                 if (counter == 1) {
@@ -83,7 +86,7 @@ public class LoginController {
             //Take users to signup screen
             loginSignupButton.getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/com/example/dutymanagment/signup.fxml"));
+            loader.setLocation(getClass().getResource("/com/example/dutymanagement/signup.fxml"));
 
             try {
                 loader.load();
@@ -104,7 +107,7 @@ public class LoginController {
         //Take users to signup screen
         loginSignupButton.getScene().getWindow().hide();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/com/example/dutymanagment/addItem.fxml"));
+        loader.setLocation(getClass().getResource("/com/example/dutymanagement/addItem.fxml"));
 
         try {
             loader.load();
@@ -115,6 +118,10 @@ public class LoginController {
         Parent root = loader.getRoot();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
+
+        AddItemController addItemController = loader.getController();
+        addItemController.setUserId(userId);
+
         stage.showAndWait();
     }
 

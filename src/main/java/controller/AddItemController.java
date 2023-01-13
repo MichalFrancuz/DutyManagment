@@ -30,6 +30,7 @@ public class AddItemController {
 
     @FXML
     private Label notTaskLabel;
+    public static int userId;
 
     @FXML
     void initialize() {
@@ -52,7 +53,9 @@ public class AddItemController {
             labelTransitionFader.fade();
 
             try {
-                AnchorPane formPane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/dutymanagment/addItemForm.fxml")));
+                AnchorPane formPane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/dutymanagement/addItemForm.fxml")));
+
+                AddItemController.userId = getUserId();
 
                 Fader formPaneShaker = new Fader(formPane, 1000);
                 formPaneShaker.fade();
@@ -64,4 +67,14 @@ public class AddItemController {
         });
 
     }
+
+    public void setUserId(int userId) {
+        AddItemController.userId = userId;
+        System.out.println("User ID is " + AddItemController.userId);
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
 }

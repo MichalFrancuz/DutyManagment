@@ -6,8 +6,8 @@ module com.example.dutymanagment {
     requires mysql.connector.j;
 
 
-    opens com.example.dutymanagment to javafx.fxml;
-    exports com.example.dutymanagment;
+    opens com.example.dutymanagement to javafx.fxml;
+    exports com.example.dutymanagement;
     exports controller;
     opens controller to javafx.fxml;
 }
