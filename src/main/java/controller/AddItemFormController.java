@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import model.Task;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.ResourceBundle;
 
@@ -71,8 +72,14 @@ public class AddItemFormController {
 
                 successLabel.setVisible(true);
                 myTuskButton.setVisible(true);
-                int taskNumber = 2;
-                myTuskButton.setText("My Task: " + taskNumber);
+
+                int taskNumber;
+                try {
+                    taskNumber = databaseHandler.getAllTasks(AddItemController.userId);
+                } catch (SQLException | ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+                myTuskButton.setText("My Tasks number: " + taskNumber);
 
                 taskField.setText("");
                 descriptionField.setText("");
