@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.ListController">
+    <AnchorPane fx:id="rootPane" prefHeight="143.0" prefWidth="801.0" style="-fx-background-color: #0091ea;">
+        <Label alignment="CENTER" layoutX="294.0" layoutY="72.0" text="My Duties">
+            <font>
+                <Font size="48.0"/>
+            </font>
+        </Label>
+    </AnchorPane>
+    <JFXListView fx:id="listTask" layoutX="474.0" layoutY="151.0" prefHeight="341.0" prefWidth="313.0"
+                 style="-fx-background-color: #ffffff;">
+        <effect>
+            <DropShadow/>
+        </effect>
+    </JFXListView>
+    <AnchorPane layoutX="88.0" layoutY="151.0" prefHeight="341.0" prefWidth="313.0">
+        <TextField fx:id="listTaskField" layoutX="39.0" layoutY="48.0" prefHeight="25.0" prefWidth="235.0"
+                   promptText="Task"/>
+        <TextField fx:id="listDescriptionField" alignment="TOP_LEFT" layoutX="40.0" layoutY="100.0" prefHeight="112.0"
+                   prefWidth="235.0" promptText="Description"/>
+        <JFXButton fx:id="listSaveTaskButton" layoutX="103.0" layoutY="254.0" prefHeight="40.0" prefWidth="107.0"
+                   style="-fx-background-color: #0091ea;" text="Save Task" textFill="WHITE">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </JFXButton>
+    </AnchorPane>
+</AnchorPane>
