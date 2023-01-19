@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2db0822c-1ce4-4a8f-b8c1-6fbcd62e6833" name="Changes" comment="Learning of JavaFX - Build tasks app - enhanced my list of task using JavaFX libraries">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2db0822c-1ce4-4a8f-b8c1-6fbcd62e6833" name="Changes" comment="Learning of JavaFX - Build tasks app - add to GitHub all project files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672078477119</updated>
       <workItem from="1672078478391" duration="54581000" />
-      <workItem from="1673473486607" duration="18857000" />
+      <workItem from="1673473486607" duration="19546000" />
     </task>
     <task id="LOCAL-00001" summary="Learning of JavaFX - My biggest app - Duty Managment part 1">
       <created>1672081030766</created>
@@ -235,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674082368038</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Learning of JavaFX - Build tasks app - add to GitHub all project files">
+      <created>1674142913834</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1674142913834</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +253,7 @@
     <MESSAGE value="Learning of JavaFX - Build tasks app - create real work counter of tasks from certain user (information from database)" />
     <MESSAGE value="Learning of JavaFX - Build tasks app - add last fxml file (last window in app) with list to choose to save our duties" />
     <MESSAGE value="Learning of JavaFX - Build tasks app - enhanced my list of task using JavaFX libraries" />
-    <option name="LAST_COMMIT_MESSAGE" value="Learning of JavaFX - Build tasks app - enhanced my list of task using JavaFX libraries" />
+    <MESSAGE value="Learning of JavaFX - Build tasks app - add to GitHub all project files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Learning of JavaFX - Build tasks app - add to GitHub all project files" />
   </component>
 </project>
