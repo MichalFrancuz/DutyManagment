@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2db0822c-1ce4-4a8f-b8c1-6fbcd62e6833" name="Changes" comment="Learning of JavaFX - Build tasks app - enhanced my list of task using JavaFX libraries">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2JSjebHEIPA8oge2NCILyMoOCd1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-j-8.0.31.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sasxc\IdeaProjects\DutyManagment\src\main\resources\com\example\dutymanagment\assets" />
+      <recent name="C:\Users\sasxc\IdeaProjects\DutyManagment\src\main\resources\com\example\dutymanagment" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="com.example.dutymanagment" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2db0822c-1ce4-4a8f-b8c1-6fbcd62e6833" name="Changes" comment="" />
+      <created>1672078477119</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672078477119</updated>
+      <workItem from="1672078478391" duration="54581000" />
+      <workItem from="1673473486607" duration="18857000" />
+    </task>
+    <task id="LOCAL-00001" summary="Learning of JavaFX - My biggest app - Duty Managment part 1">
+      <created>1672081030766</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672081030766</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Learning of JavaFX">
+      <created>1672587960657</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672587960657</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Learning of JavaFX">
+      <created>1672862049910</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1672862049910</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Learning of JavaFX - problem with send data to database">
+      <created>1672867537282</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672867537282</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Learning of JavaFX - problem with send data to database, still working with this">
+      <created>1673129599887</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673129599887</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Learning of JavaFX - problem with send data to database is fixed, I need to call method ... . executeUpdate() in signUpUser method">
+      <created>1673183337783</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673183337783</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Learning of JavaFX - make my code more readable">
+      <created>1673192535706</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673192535706</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Learning of JavaFX - Build tasks app - add login function">
+      <created>1673205291347</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673205291347</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Learning of JavaFX - Build tasks app - add animation shaker when password or/and login is wrong">
+      <created>1673210574536</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673210574536</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Learning of JavaFX - Build tasks app - add new view after correct login, not completed">
+      <created>1673217590527</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1673217590527</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Learning of JavaFX - Build tasks app - add new view to create new task, animation for add button">
+      <created>1673305021164</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1673305021164</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Learning of JavaFX - Build tasks app - fixing small &quot;yellow&quot; problem and making aesthetics of code">
+      <created>1673305617235</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1673305617235</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Learning of JavaFX - Build tasks app - problem with inherit anchor pane from other scene, I must modify this scene">
+      <created>1673389649292</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1673389649292</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Learning of JavaFX - Build tasks app - inherit anchor pane from other scene in new created scene, add new class with animation">
+      <created>1673395779735</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673395779735</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Learning of JavaFX - Build tasks app - create action for button save task to put data to database">
+      <created>1673476598941</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673476598941</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Learning of JavaFX - Build tasks app - create action for button save task to put data to database">
+      <created>1673571477027</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673571477027</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Learning of JavaFX - Build tasks app - create real work counter of tasks from certain user (information from database)">
+      <created>1673736708024</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673736708024</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Learning of JavaFX - Build tasks app - add last fxml file (last window in app) with list to choose to save our duties">
+      <created>1673812244026</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673812244026</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Learning of JavaFX - Build tasks app - enhanced my list of task using JavaFX libraries">
+      <created>1674082368038</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1674082368038</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Learning of JavaFX - My biggest app - Duty Managment part 1" />
+    <MESSAGE value="Learning of JavaFX" />
+    <MESSAGE value="Learning of JavaFX - problem with send data to database" />
+    <MESSAGE value="Learning of JavaFX - problem with send data to database, still working with this" />
+    <MESSAGE value="Learning of JavaFX - problem with send data to database is fixed, I need to call method ... . executeUpdate() in signUpUser method" />
+    <MESSAGE value="Learning of JavaFX - make my code more readable" />
+    <MESSAGE value="Learning of JavaFX - Build tasks app - add login function" />
+    <MESSAGE value="Learning of JavaFX - Build tasks app - add animation shaker when password or/and login is wrong" />
+    <MESSAGE value="Learning of JavaFX - Build tasks app - add new view after correct login, not completed" />
+    <MESSAGE value="Learning of JavaFX - Build tasks app - add new view to create new task, animation for add button" />
+    <MESSAGE value="Learning of JavaFX - Build tasks app - fixing small &quot;yellow&quot; problem and making aesthetics of code" />
+    <MESSAGE value="Learning of JavaFX - Build tasks app - problem with inherit anchor pane from other scene, I must modify this scene" />
+    <MESSAGE value="Learning of JavaFX - Build tasks app - inherit anchor pane from other scene in new created scene, add new class with animation" />
+    <MESSAGE value="Learning of JavaFX - Build tasks app - create action for button save task to put data to database" />
+    <MESSAGE value="Learning of JavaFX - Build tasks app - create real work counter of tasks from certain user (information from database)" />
+    <MESSAGE value="Learning of JavaFX - Build tasks app - add last fxml file (last window in app) with list to choose to save our duties" />
+    <MESSAGE value="Learning of JavaFX - Build tasks app - enhanced my list of task using JavaFX libraries" />
+    <option name="LAST_COMMIT_MESSAGE" value="Learning of JavaFX - Build tasks app - enhanced my list of task using JavaFX libraries" />
+  </component>
+</project>

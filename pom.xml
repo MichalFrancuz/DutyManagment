@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>DutyManagment</artifactId>
+    <artifactId>DutyManagement</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>DutyManagment</name>
 
@@ -38,6 +38,11 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.jfoenix</groupId>
+            <artifactId>jfoenix</artifactId>
+            <version>9.0.10</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -60,7 +65,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.dutymanagment/com.example.dutymanagment.HelloApplication</mainClass>
+                            <mainClass>com.example.dutymanagment/com.example.dutymanagement.HelloApplication</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
