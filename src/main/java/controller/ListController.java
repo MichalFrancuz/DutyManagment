@@ -1,98 +1,55 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListCell;
 import com.jfoenix.controls.JFXListView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Priority;
+import model.Task;
 
 import java.net.URL;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class ListController {
     @FXML
     private ResourceBundle resources;
-
     @FXML
     private URL location;
-
     @FXML
     private TextField listDescriptionField;
-
     @FXML
     private JFXButton listSaveTaskButton;
-
     @FXML
-    private JFXListView<String> listTask;
-
+    private JFXListView<Task> listTask;
     @FXML
     private TextField listTaskField;
-
     @FXML
     private AnchorPane rootPane;
-    ObservableList<String> listview = FXCollections.observableArrayList(
-            "Work",
-            "Study",
-            "Programming",
-            "Home",
-            "example",
-            "example",
-            "example",
-            "example",
-            "example",
-            "example",
-            "example",
-            "example",
-            "example"
-    );
 
     @FXML
     void initialize() {
 
-        listTask.setItems(listview);
+        Task myTask = new Task();
+        myTask.setTask("Run 10 km");
+        myTask.setDescription("Have to do it tomorrow morning");
+        myTask.setDatecreated(Timestamp.valueOf(LocalDateTime.now()));
 
-        listTask.setCellFactory(param -> new JFXCell());
+        Task myTask2 = new Task();
+        myTask2.setTask("Sell my old car");
+        myTask2.setDescription("Have to do it to 01.02.2023");
+        myTask2.setDatecreated(Timestamp.valueOf(LocalDateTime.now()));
 
-    }
+        ObservableList<Task> tasks = FXCollections.observableArrayList();
 
-    static class JFXCell extends JFXListCell<String> {
-        //Hbox = Horizontal Box
-        HBox hBox = new HBox();
-        Button helloButton = new Button("Ok");
-        Label task = new Label();
+        tasks.addAll(myTask, myTask2);
 
-        Pane pane = new Pane();
+        listTask.setItems(tasks);
+        listTask.setCellFactory(CellController -> new CellController());
 
-        Image icon = new Image("file:src/main/resources/com/example/dutymanagement/assets/icons8-add-new-64.png");
-        ImageView iconImg = new ImageView(icon);
-
-        public JFXCell() {
-            super();
-
-            hBox.getChildren().addAll(iconImg, task, helloButton);
-            HBox.setHgrow(pane, Priority.ALWAYS);
-        }
-
-        public void updateItem(String taskName, boolean empty) {
-            super.updateItem(taskName, empty);
-            setText(null);
-            setGraphic(null);
-
-            if (taskName != null && !empty) {
-                task.setText(taskName);
-                setGraphic(hBox);
-            }
-        }
     }
 
 }
