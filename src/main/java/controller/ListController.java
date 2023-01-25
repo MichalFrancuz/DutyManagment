@@ -73,7 +73,7 @@ public class ListController {
 
         Pane pane = new Pane();
 
-        Image icon = new Image("/com/example/dutymanagement/assets/icons8-add-new-64.png");
+        Image icon = new Image("file:src/main/resources/com/example/dutymanagement/assets/icons8-add-new-64.png");
         ImageView iconImg = new ImageView(icon);
 
         public JFXCell() {
