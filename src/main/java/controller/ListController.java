@@ -33,6 +33,8 @@ public class ListController {
     @FXML
     void initialize() {
 
+        System.out.println("User ID from cell controller: " + AddItemController.userId);
+
         Task myTask = new Task();
         myTask.setTask("Run 10 km");
         myTask.setDescription("Have to do it tomorrow morning");

@@ -3,11 +3,16 @@ package controller;
 import Database.DatabaseHandler;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import model.Task;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Calendar;
@@ -85,6 +90,19 @@ public class AddItemFormController {
                 descriptionField.setText("");
 
                 myTuskButton.setOnAction(actionEvent1 -> {
+                    // send users to the list screen
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getResource("/com/example/dutymanagement/list.fxml"));
+
+                    try {
+                        loader.load();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    Parent root = loader.getRoot();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root));
+                    stage.showAndWait();
 
                 });
 
