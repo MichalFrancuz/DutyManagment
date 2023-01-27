@@ -17,13 +17,13 @@
             </font>
         </Label>
     </AnchorPane>
-    <JFXListView fx:id="listTask" layoutX="304.0" layoutY="151.0" prefHeight="341.0" prefWidth="483.0"
+    <JFXListView fx:id="listTask" layoutX="348.0" layoutY="151.0" prefHeight="341.0" prefWidth="439.0"
                  style="-fx-background-color: #ffffff;">
         <effect>
             <DropShadow/>
         </effect>
     </JFXListView>
-    <AnchorPane layoutX="14.0" layoutY="143.0" prefHeight="341.0" prefWidth="313.0">
+    <AnchorPane layoutX="14.0" layoutY="143.0" prefHeight="341.0" prefWidth="329.0">
         <TextField fx:id="listTaskField" layoutX="39.0" layoutY="48.0" prefHeight="25.0" prefWidth="235.0"
                    promptText="Task"/>
         <TextField fx:id="listDescriptionField" alignment="TOP_LEFT" layoutX="40.0" layoutY="100.0" prefHeight="112.0"
