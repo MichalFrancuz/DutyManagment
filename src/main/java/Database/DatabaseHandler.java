@@ -20,8 +20,13 @@ public class DatabaseHandler extends Configs {
         return dbConnection;
     }
 
-    //Write
+    //Delete Task
+    public void deleteTask(int userId) {
+        String query = "DELETE FROM " + Const.TASKS_TABLE + " WHERE " +
+                Const.USERS_ID + Const.TASKS_ID + "=?";
+    }
 
+    //Write
     public void signUpUser(User user) {
         String insert = "INSERT INTO " + Const.USERS_TABLE + "(" + Const.USERS_FIRSTNAME
                 + "," + Const.USERS_LASTNAME + "," + Const.USERS_USERNAME + ","

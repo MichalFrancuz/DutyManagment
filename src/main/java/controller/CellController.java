@@ -63,6 +63,11 @@ public class CellController extends JFXListCell<Task> {
             dateLabel.setText(myTask.getDatecreated().toString());
             descriptionLabel.setText(myTask.getDescription());
 
+            deleteButton.setOnMouseClicked(mouseEvent -> {
+                getListView().getItems().remove(getItem());
+
+            });
+
             setText(null);
             setGraphic(rootAnchorPane);
 
