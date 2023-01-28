@@ -1,5 +1,6 @@
 package controller;
 
+import Database.DatabaseHandler;
 import com.jfoenix.controls.JFXListCell;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import model.Task;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class CellController extends JFXListCell<Task> {
 
@@ -31,6 +33,8 @@ public class CellController extends JFXListCell<Task> {
     private Label taskLabel;
 
     private FXMLLoader fxmlLoader;
+
+    private DatabaseHandler databaseHandler;
 
     @FXML
     void initialize() {
@@ -63,7 +67,15 @@ public class CellController extends JFXListCell<Task> {
             dateLabel.setText(myTask.getDatecreated().toString());
             descriptionLabel.setText(myTask.getDescription());
 
+            int taskId = myTask.getTaskId();
+
             deleteButton.setOnMouseClicked(mouseEvent -> {
+                databaseHandler = new DatabaseHandler();
+                try {
+                    databaseHandler.deleteTask(AddItemController.userId, taskId);
+                } catch (SQLException | ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
                 getListView().getItems().remove(getItem());
 
             });

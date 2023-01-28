@@ -21,9 +21,15 @@ public class DatabaseHandler extends Configs {
     }
 
     //Delete Task
-    public void deleteTask(int userId) {
+    public void deleteTask(int userId, int taskId) throws SQLException, ClassNotFoundException {
         String query = "DELETE FROM " + Const.TASKS_TABLE + " WHERE " +
-                Const.USERS_ID + Const.TASKS_ID + "=?";
+                Const.USERS_ID + " AND " + Const.TASKS_ID + "=?";
+
+        PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
+        preparedStatement.setInt(1, userId);
+        preparedStatement.setInt(1, taskId);
+        preparedStatement.execute();
+        preparedStatement.close();
     }
 
     //Write

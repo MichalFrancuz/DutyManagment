@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 public class Task {
     private int userId;
+    private int taskId;
     private String task;
     private Timestamp datecreated;
     private String description;
@@ -47,5 +48,13 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
     }
 }
