@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -14,6 +16,15 @@
         <Label alignment="CENTER" layoutX="294.0" layoutY="72.0" text="My Duties">
             <font>
                 <Font size="48.0"/>
+            </font>
+        </Label>
+        <ImageView fx:id="listRefreshButton" fitHeight="30.0" fitWidth="30.0" layoutX="741.0" layoutY="101.0"
+                   pickOnBounds="true" preserveRatio="true">
+            <Image url="@assets/icons8-sync-50.png"/>
+        </ImageView>
+        <Label layoutX="681.0" layoutY="104.0" prefHeight="25.0" prefWidth="60.0" text="Refresh">
+            <font>
+                <Font size="16.0"/>
             </font>
         </Label>
     </AnchorPane>
