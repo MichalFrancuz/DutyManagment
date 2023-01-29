@@ -13,6 +13,7 @@ import model.Task;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 
 public class ListController {
@@ -31,12 +32,14 @@ public class ListController {
     @FXML
     private AnchorPane rootPane;
 
+    private DatabaseHandler databaseHandler;
+
     @FXML
     void initialize() throws SQLException {
 
         ObservableList<Task> tasks = FXCollections.observableArrayList();
 
-        DatabaseHandler databaseHandler = new DatabaseHandler();
+        databaseHandler = new DatabaseHandler();
         ResultSet resultSet = databaseHandler.getTaskByUser(AddItemController.userId);
 
         while (resultSet.next()) {
@@ -54,6 +57,31 @@ public class ListController {
         listTask.setItems(tasks);
         listTask.setCellFactory(CellController -> new CellController());
 
+        listSaveTaskButton.setOnAction(actionEvent -> addNewTask());
+
+    }
+
+    public void addNewTask() {
+
+        if (!listTaskField.getText().equals("") ||
+                !listDescriptionField.getText().equals("")) {
+            Task myNewTask = new Task();
+
+            Calendar calendar = Calendar.getInstance();
+
+            java.sql.Timestamp timestamp =
+                    new java.sql.Timestamp(calendar.getTimeInMillis());
+
+            myNewTask.setUserId(AddItemController.userId);
+            myNewTask.setTask(listTaskField.getText().trim());
+            myNewTask.setDescription(listDescriptionField.getText().trim());
+            myNewTask.setDatecreated(timestamp);
+
+            databaseHandler.insertTask(myNewTask);
+
+            listTaskField.setText("");
+            listDescriptionField.setText("");
+        }
     }
 
 }
