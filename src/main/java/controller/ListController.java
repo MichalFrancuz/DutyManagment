@@ -13,6 +13,7 @@ import model.Task;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.ResourceBundle;
 
@@ -69,8 +70,8 @@ public class ListController {
 
             Calendar calendar = Calendar.getInstance();
 
-            java.sql.Timestamp timestamp =
-                    new java.sql.Timestamp(calendar.getTimeInMillis());
+            Timestamp timestamp =
+                    new Timestamp(calendar.getTimeInMillis());
 
             myNewTask.setUserId(AddItemController.userId);
             myNewTask.setTask(listTaskField.getText().trim());
@@ -81,6 +82,13 @@ public class ListController {
 
             listTaskField.setText("");
             listDescriptionField.setText("");
+
+            try {
+                initialize();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
         }
     }
 
