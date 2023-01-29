@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import model.Task;
 
@@ -18,6 +19,8 @@ import java.util.Calendar;
 import java.util.ResourceBundle;
 
 public class ListController {
+    @FXML
+    private ImageView listRefreshButton;
     @FXML
     private ResourceBundle resources;
     @FXML
@@ -52,12 +55,18 @@ public class ListController {
 
             tasks.addAll(task);
 
-//            System.out.println("User tasks: " + resultSet.getString("task"));
         }
 
         listTask.setItems(tasks);
         listTask.setCellFactory(CellController -> new CellController());
 
+        listRefreshButton.setOnMouseClicked(mouseEvent -> {
+            try {
+                refreshList();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
         listSaveTaskButton.setOnAction(actionEvent -> addNewTask());
 
     }
@@ -88,6 +97,27 @@ public class ListController {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+
+        }
+    }
+
+    public void refreshList() throws SQLException {
+
+        System.out.println("refreshList in ListCont called");
+
+        ObservableList<Task> refreshedTasks = FXCollections.observableArrayList();
+
+        databaseHandler = new DatabaseHandler();
+        ResultSet resultSet = databaseHandler.getTaskByUser(AddItemController.userId);
+
+        while (resultSet.next()) {
+            Task task = new Task();
+            task.setTaskId(resultSet.getInt("taskid"));
+            task.setTask(resultSet.getString("task"));
+            task.setDatecreated(resultSet.getTimestamp("datecreated"));
+            task.setDescription(resultSet.getString("description"));
+
+            refreshedTasks.addAll(task);
 
         }
     }
