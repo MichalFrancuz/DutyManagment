@@ -1,5 +1,7 @@
 package model;
 
+import javafx.scene.control.TextField;
+
 import java.sql.Timestamp;
 
 public class Task {
@@ -26,7 +28,7 @@ public class Task {
         this.userId = userId;
     }
 
-    public String getTask() {
+    public TextField getTask() {
         return task;
     }
 

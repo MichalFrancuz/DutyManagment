@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateTaskController">
+   <children>
+      <AnchorPane layoutX="6.0" layoutY="145.0" prefHeight="341.0" prefWidth="329.0">
+         <children>
+            <TextField fx:id="listTaskField" layoutX="39.0" layoutY="48.0" prefHeight="25.0" prefWidth="235.0" promptText="Task" />
+            <TextField fx:id="listDescriptionField" alignment="TOP_LEFT" layoutX="40.0" layoutY="100.0" prefHeight="112.0" prefWidth="235.0" promptText="Description" />
+            <JFXButton fx:id="listSaveTaskButton" layoutX="92.0" layoutY="254.0" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #0091ea;" text="Update Task" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="140.0" prefWidth="338.0" style="-fx-background-color: #0091ea;">
+         <children>
+            <Label alignment="CENTER" layoutX="62.0" layoutY="56.0" text="My Duties">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

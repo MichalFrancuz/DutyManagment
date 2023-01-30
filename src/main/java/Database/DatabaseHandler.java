@@ -145,6 +145,28 @@ public class DatabaseHandler extends Configs {
         }
     }
 
+    public void updateTask(Task task) {
+        String insert = "INSERT INTO " + Const.TASKS_TABLE + "(" + Const.TASKS_DATE
+                + "," + Const.TASKS_DESCRIPTION + "," + Const.TASKS_ID + "," +
+                Const.TASKS_TASK + ")" + "VALUES(?,?,?,?)";
+
+        {
+            try {
+                PreparedStatement preparedStatement = getDbConnection().prepareStatement(insert);
+
+                preparedStatement.setInt(3, task.getTaskId());
+                preparedStatement.setTimestamp(1, task.getDatecreated());
+                preparedStatement.setString(2, task.getDescription());
+                preparedStatement.setString(4, task.getTask());
+
+                preparedStatement.executeUpdate();
+
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
     //Read
 
     //Update
