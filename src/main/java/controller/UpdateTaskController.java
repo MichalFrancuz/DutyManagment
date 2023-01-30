@@ -13,23 +13,18 @@ public class UpdateTaskController {
     @FXML
     private TextField updateDescriptionField;
     @FXML
-    private JFXButton updateTaskButton;
+    public JFXButton updateTaskButton;
     @FXML
     private TextField updateTaskField;
 
     @FXML
-    void initialize
+    void initialize() {
 
-    public JFXButton getUpdateTaskButton() {
-        return updateTaskButton;
+
     }
 
-    public void setUpdateTaskButton(JFXButton updateTaskButton) {
-        this.updateTaskButton = updateTaskButton;
-    }
-
-    public void setUpdateTaskField(TextField updateTaskField) {
-        this.updateTaskField.getText().trim();
+    public void setTaskField(String task) {
+        this.updateTaskField.setText(task);
     }
 
     public String getTask() {
@@ -37,26 +32,10 @@ public class UpdateTaskController {
     }
 
     public void setUpdateDescriptionField(String description) {
-        this.updateDescriptionField.getText().trim();
+        this.updateDescriptionField.setText(description);
     }
 
     public String getDescription() {
         return this.updateDescriptionField.getText().trim();
-    }
-    public void refreshList() throws SQLException {
-
-        System.out.println("Calling refresh list");
-
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/com/example/dutymanagement/list.fxml"));
-
-        try {
-            loader.load();
-
-            ListController listController = loader.getController();
-            listController.refreshList();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

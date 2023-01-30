@@ -28,7 +28,7 @@ public class Task {
         this.userId = userId;
     }
 
-    public TextField getTask() {
+    public String getTask() {
         return task;
     }
 

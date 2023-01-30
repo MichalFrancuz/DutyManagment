@@ -20,6 +20,20 @@ public class DatabaseHandler extends Configs {
         return dbConnection;
     }
 
+    public void updateTask(Timestamp datecreated, String description, String task, int taskId) throws SQLException, ClassNotFoundException {
+
+        String query = "UPDATE tasks SET datecreated=?, description=?, task=? WHERE taskid=?";
+
+        PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
+        preparedStatement.setTimestamp(1, datecreated);
+        preparedStatement.setString(2, description);
+        preparedStatement.setString(3, task);
+        preparedStatement.setInt(4, taskId);
+        preparedStatement.execute();
+        preparedStatement.close();
+
+    }
+
     //Delete Task
     public void deleteTask(int userId, int taskId) throws SQLException, ClassNotFoundException {
         String query = "DELETE FROM " + Const.TASKS_TABLE + " WHERE " +
@@ -135,28 +149,6 @@ public class DatabaseHandler extends Configs {
                 preparedStatement.setInt(1, task.getUserId());
                 preparedStatement.setTimestamp(2, task.getDatecreated());
                 preparedStatement.setString(3, task.getDescription());
-                preparedStatement.setString(4, task.getTask());
-
-                preparedStatement.executeUpdate();
-
-            } catch (SQLException | ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
-
-    public void updateTask(Task task) {
-        String insert = "INSERT INTO " + Const.TASKS_TABLE + "(" + Const.TASKS_DATE
-                + "," + Const.TASKS_DESCRIPTION + "," + Const.TASKS_ID + "," +
-                Const.TASKS_TASK + ")" + "VALUES(?,?,?,?)";
-
-        {
-            try {
-                PreparedStatement preparedStatement = getDbConnection().prepareStatement(insert);
-
-                preparedStatement.setInt(3, task.getTaskId());
-                preparedStatement.setTimestamp(1, task.getDatecreated());
-                preparedStatement.setString(2, task.getDescription());
                 preparedStatement.setString(4, task.getTask());
 
                 preparedStatement.executeUpdate();

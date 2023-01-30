@@ -80,7 +80,7 @@ public class CellController extends JFXListCell<Task> {
             listUpdateButton.setOnMouseClicked(event -> {
 
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass()).getResource("/com/example/dutymanagement/updateTaskForm.fxml");
+                loader.setLocation(getClass().getResource("/com/example/dutymanagement/updateTaskForm.fxml"));
 
                 try {
                     loader.load();
@@ -96,7 +96,7 @@ public class CellController extends JFXListCell<Task> {
                 updateTaskController.setTaskField(myTask.getTask());
                 updateTaskController.setUpdateDescriptionField(myTask.getDescription());
 
-                updateTaskController.updateTaskButton().setOnAction(event1 -> {
+                updateTaskController.updateTaskButton.setOnAction(event1 -> {
 
                     Calendar calendar = Calendar.getInstance();
 
