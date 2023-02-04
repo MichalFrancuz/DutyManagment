@@ -10,6 +10,9 @@ import java.sql.SQLException;
 
 public class UpdateTaskController {
 
+    public TextField listTaskField;
+    public TextField listDescriptionField;
+    public JFXButton listSaveTaskButton;
     @FXML
     private TextField updateDescriptionField;
     @FXML

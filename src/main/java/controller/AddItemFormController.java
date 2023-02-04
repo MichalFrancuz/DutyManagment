@@ -52,10 +52,9 @@ public class AddItemFormController {
     void initialize() {
 
         databaseHandler = new DatabaseHandler();
+        Task task = new Task();
 
         saveTaskButton.setOnAction(actionEvent -> {
-
-            Task task = new Task();
 
             Calendar calendar = Calendar.getInstance();
 

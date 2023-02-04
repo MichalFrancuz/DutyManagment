@@ -29,7 +29,7 @@ public class DatabaseHandler extends Configs {
         preparedStatement.setString(2, description);
         preparedStatement.setString(3, task);
         preparedStatement.setInt(4, taskId);
-        preparedStatement.execute();
+        preparedStatement.executeUpdate();
         preparedStatement.close();
 
     }

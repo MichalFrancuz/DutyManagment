@@ -14,10 +14,11 @@ public class Task {
     public Task() {
     }
 
-    public Task(String task, Timestamp datecreated, String description) {
-        this.task = task;
+    public Task(Timestamp datecreated, String description, String task, int userId) {
         this.datecreated = datecreated;
         this.description = description;
+        this.task = task;
+        this.userId = userId;
     }
 
     public int getUserId() {

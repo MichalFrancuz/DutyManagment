@@ -22,10 +22,6 @@ public class ListController {
     @FXML
     private ImageView listRefreshButton;
     @FXML
-    private ResourceBundle resources;
-    @FXML
-    private URL location;
-    @FXML
     private TextField listDescriptionField;
     @FXML
     private JFXButton listSaveTaskButton;
@@ -33,15 +29,15 @@ public class ListController {
     private JFXListView<Task> listTask;
     @FXML
     private TextField listTaskField;
-    @FXML
-    private AnchorPane rootPane;
-
     private DatabaseHandler databaseHandler;
+    private ObservableList<Task> tasks;
+    private ObservableList<Task> refreshedTasks;
 
     @FXML
     void initialize() throws SQLException {
+        System.out.println("initialize called");
 
-        ObservableList<Task> tasks = FXCollections.observableArrayList();
+        tasks = FXCollections.observableArrayList();
 
         databaseHandler = new DatabaseHandler();
         ResultSet resultSet = databaseHandler.getTaskByUser(AddItemController.userId);
@@ -105,7 +101,7 @@ public class ListController {
 
         System.out.println("refreshList in ListCont called");
 
-        ObservableList<Task> refreshedTasks = FXCollections.observableArrayList();
+        refreshedTasks = FXCollections.observableArrayList();
 
         databaseHandler = new DatabaseHandler();
         ResultSet resultSet = databaseHandler.getTaskByUser(AddItemController.userId);
@@ -120,6 +116,10 @@ public class ListController {
             refreshedTasks.addAll(task);
 
         }
+
+        listTask.setItems(refreshedTasks);
+        listTask.setCellFactory(CellController -> new CellController());
+
     }
 
 }

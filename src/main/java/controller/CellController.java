@@ -1,15 +1,21 @@
 package controller;
 
-import Database.DatabaseHandler;
+import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXListCell;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Pair;
+
+import Database.DatabaseHandler;
 import model.Task;
 
 import java.io.IOException;
@@ -18,6 +24,8 @@ import java.util.Calendar;
 
 public class CellController extends JFXListCell<Task> {
 
+    @FXML
+    private AnchorPane rootAnchorPane;
     @FXML
     private Label dateLabel;
 
@@ -29,9 +37,6 @@ public class CellController extends JFXListCell<Task> {
 
     @FXML
     private ImageView iconImageView;
-
-    @FXML
-    private AnchorPane rootAnchorPane;
 
     @FXML
     private Label taskLabel;
@@ -50,10 +55,13 @@ public class CellController extends JFXListCell<Task> {
     }
 
     @Override
-    protected void updateItem(Task myTask, boolean empty) {
-        super.updateItem(myTask, empty);
+    public void updateItem(Task task, boolean empty) {
 
-        if (empty || myTask == null) {
+        databaseHandler = new DatabaseHandler();
+
+        super.updateItem(task, empty);
+
+        if (empty || task == null) {
             setText(null);
             setGraphic(null);
         } else {
@@ -66,15 +74,15 @@ public class CellController extends JFXListCell<Task> {
                 try {
                     fxmlLoader.load();
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
                 }
             }
 
-            taskLabel.setText(myTask.getTask());
-            dateLabel.setText(myTask.getDatecreated().toString());
-            descriptionLabel.setText(myTask.getDescription());
+            taskLabel.setText(task.getTask());
+            dateLabel.setText(task.getDatecreated().toString());
+            descriptionLabel.setText(task.getDescription());
 
-            int taskId = myTask.getTaskId();
+            int taskId = task.getTaskId();
 
 
             listUpdateButton.setOnMouseClicked(event -> {
@@ -93,8 +101,8 @@ public class CellController extends JFXListCell<Task> {
                 stage.setScene(new Scene(root));
 
                 UpdateTaskController updateTaskController = loader.getController();
-                updateTaskController.setTaskField(myTask.getTask());
-                updateTaskController.setUpdateDescriptionField(myTask.getDescription());
+                updateTaskController.setTaskField(task.getTask());
+                updateTaskController.setUpdateDescriptionField(task.getDescription());
 
                 updateTaskController.updateTaskButton.setOnAction(event1 -> {
 
@@ -105,10 +113,10 @@ public class CellController extends JFXListCell<Task> {
 
                     try {
 
-                        System.out.println("taskid " + myTask.getTask());
+                        System.out.println("taskid " + task.getTaskId());
 
                         databaseHandler.updateTask(timestamp, updateTaskController.getDescription(),
-                                updateTaskController.getTask(), myTask.getTaskId());
+                                updateTaskController.getTask(), task.getTaskId());
 
                         // update our listController
                         // updateTaskController.refreshList();
@@ -122,12 +130,15 @@ public class CellController extends JFXListCell<Task> {
                 stage.show();
             });
 
-            deleteButton.setOnMouseClicked(mouseEvent -> {
-                databaseHandler = new DatabaseHandler();
+            deleteButton.setOnMouseClicked(event -> {
+
                 try {
                     databaseHandler.deleteTask(AddItemController.userId, taskId);
-                } catch (SQLException | ClassNotFoundException e) {
-                    throw new RuntimeException(e);
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
                 }
                 getListView().getItems().remove(getItem());
 
